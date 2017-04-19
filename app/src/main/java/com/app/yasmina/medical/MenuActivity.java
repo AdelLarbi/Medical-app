@@ -3,31 +3,43 @@ package com.app.yasmina.medical;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.widget.Adapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MenuActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private CardContentAdapter adapter;
+    private List<CardContent> cardList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        // Get access to our TextView
-        TextView txt = (TextView) findViewById(R.id.textView);
-        TextView txt2 = (TextView) findViewById(R.id.textView2);
-        TextView txt3 = (TextView) findViewById(R.id.textView3);
-        TextView txt4 = (TextView) findViewById(R.id.textView4);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        // Create the TypeFace from the TTF asset
-        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Font-Bold.ttf");
-        Typeface font2 = Typeface.createFromAsset(getAssets(), "fonts/Font-Logo.ttf");
-        Typeface font3 = Typeface.createFromAsset(getAssets(), "fonts/Font-Medium.ttf");
-        Typeface font4 = Typeface.createFromAsset(getAssets(), "fonts/Font-Regular.ttf");
+        cardList = new ArrayList<>();
+        adapter = new CardContentAdapter(this, cardList);
 
-        // Assign the typeface to the view
-        txt.setTypeface(font);
-        txt2.setTypeface(font2);
-        txt3.setTypeface(font3);
-        txt4.setTypeface(font4);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        recyclerView.setAdapter(adapter);
+
+        prepareCards();
+    }
+
+    private void prepareCards() {
+        cardList.add(new CardContent(1, "Hello", "World !"));
+        cardList.add(new CardContent(1, "Hello 2", "World ! 2"));
+        cardList.add(new CardContent(1, "Hello 3", "World ! 3"));
+        adapter.notifyDataSetChanged();
     }
 }
