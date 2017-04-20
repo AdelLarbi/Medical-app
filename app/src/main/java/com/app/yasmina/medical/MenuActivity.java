@@ -37,9 +37,11 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void prepareCards() {
-        cardList.add(new CardContent(1, "Hello", "World !"));
-        cardList.add(new CardContent(1, "Hello 2", "World ! 2"));
-        cardList.add(new CardContent(1, "Hello 3", "World ! 3"));
+        cardList.add(new CardContent(1, "Kyste", "World !"));
+        cardList.add(new CardContent(2, "Macrocalcification isolée", "World ! 2"));
+        cardList.add(new CardContent(3, "Nodule hyper-échogène", "World ! 3"));
+        cardList.add(new CardContent(4, "Nodule iso-échogène", "World ! 3"));
+        cardList.add(new CardContent(5, "Nodule hypo-échogène", "World ! 3"));
 
         adapter.notifyDataSetChanged();
     }
