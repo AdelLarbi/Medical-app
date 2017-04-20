@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Medical</string>
+    <string name="welcome_title">Nodule Thyroïdien \nTIRADS</string>
+    <string name="image_description">Nodule Thyroïdien TIRADS</string>
 </resources>
