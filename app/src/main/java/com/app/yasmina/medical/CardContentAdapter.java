@@ -1,9 +1,14 @@
 package com.app.yasmina.medical;
 
+import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -42,26 +47,51 @@ class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.MyViewH
             cardContentLayout = (RelativeLayout) view.findViewById(R.id.card_content);
             cardContentLayout.setVisibility(View.GONE);
 
-            cardTitle.setOnClickListener(changeContentVisibility);
+            cardTitle.setOnTouchListener(touchListener);
             cardContentLayout.setOnClickListener(hideContent);
         }
     }
 
-    private View.OnClickListener changeContentVisibility = new View.OnClickListener() {
+    private View.OnTouchListener touchListener = new View.OnTouchListener() {
 
         @Override
-        public void onClick(View view) {
-            View content = getContentView(view);
+        public boolean onTouch(View view, MotionEvent event) {
 
-            if (content.isShown()) {
-                ((TextView) view).setTypeface(FONT_REGULAR);
-                content.setVisibility(View.GONE);
-            } else {
-                ((TextView) view).setTypeface(FONT_MEDIUM);
-                content.setVisibility(View.VISIBLE);
+            // Simulate pressed state on the card view.
+            switch (event.getActionMasked()) {
+                case MotionEvent.ACTION_DOWN:
+                    // do FEED-BACK only
+                    view.setPressed(true);
+                    break;
+
+                case MotionEvent.ACTION_UP:
+                    // stop FEED-BACK Then EXPAND
+                    view.setPressed(false);
+                    changeContentVisibility(view);
+                    break;
+
+                case MotionEvent.ACTION_CANCEL:
+                    // stop FEED-BACK and don't EXPAND
+                    view.setPressed(false);
+                    break;
             }
+
+            // Pass all events through to the host view.
+            return true;
         }
     };
+
+    private void changeContentVisibility(View view) {
+        View content = getContentView(view);
+
+        if (content.isShown()) {
+            ((TextView) view).setTypeface(FONT_REGULAR);
+            content.setVisibility(View.GONE);
+        } else {
+            ((TextView) view).setTypeface(FONT_MEDIUM);
+            content.setVisibility(View.VISIBLE);
+        }
+    }
 
     private View getContentView(View view) {
         ViewGroup parent = (ViewGroup) view.getParent();

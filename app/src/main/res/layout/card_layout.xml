@@ -10,22 +10,20 @@
     android:layout_marginRight="16dp"
     android:layout_marginLeft="16dp"
     android:layout_marginBottom="16dp"
-    card_view:cardCornerRadius="4dp" >
+    card_view:cardCornerRadius="3dp" >
 
     <RelativeLayout
         android:id="@+id/card_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp" >
+        android:layout_height="match_parent" >
 
         <TextView
             android:id="@+id/card_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:foreground="@drawable/card_view_selector"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
+            android:clickable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="10dp"
             android:textSize="20sp" />
 
         <RelativeLayout
@@ -38,7 +36,6 @@
                 android:id="@+id/separator"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@color/grey300" />
 
@@ -48,12 +45,14 @@
                 android:layout_height="match_parent"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
                 android:layout_below="@id/separator" >
 
                 <TextView
                     android:id="@+id/card_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
                     android:gravity="center"
                     android:textSize="18sp" />
 
