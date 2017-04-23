@@ -1,18 +1,16 @@
-package com.app.yasmina.medical;
+package com.app.yasmina.medical.activity;
 
-import android.content.res.TypedArray;
 import android.graphics.Typeface;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.app.yasmina.medical.R;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.app.yasmina.medical;
+package com.app.yasmina.medical.activity;
 
 import java.util.ArrayList;
 

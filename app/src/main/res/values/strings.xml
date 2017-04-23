@@ -2,4 +2,22 @@
     <string name="app_name">Medical</string>
     <string name="welcome_title">Nodule Thyroïdien \nTIRADS</string>
     <string name="image_description">Nodule Thyroïdien TIRADS</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+
+    <string name="drawer_title">Nodule Thyroïdien : TIRADS</string>
+    <string name="kyste">Kyste</string>
+    <string name="macrocalcification">Macrocalcification isolée</string>
+    <string name="nodule_hyper">Nodule hyper-échogène</string>
+    <string name="nodule_iso">Nodule iso-échogène</string>
+    <string name="nodule_hypo">Nodule hypo-échogène</string>
+    <string name="communicate">Communication</string>
+    <string name="about">À propos</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

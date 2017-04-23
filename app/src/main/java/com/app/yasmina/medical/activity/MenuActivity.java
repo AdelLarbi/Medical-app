@@ -1,10 +1,12 @@
-package com.app.yasmina.medical;
+package com.app.yasmina.medical.activity;
 
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.app.yasmina.medical.R;
 
 import java.util.ArrayList;
 import java.util.List;

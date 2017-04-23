@@ -1,4 +1,5 @@
-package com.app.yasmina.medical;
+package com.app.yasmina.medical.activity;
+
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -9,7 +10,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.app.yasmina.medical.R;
+
 public class WelcomeActivity extends AppCompatActivity {
+
+    //private final Class<MenuActivity> GOTO_ACTIVITY = MenuActivity.class;
+    private final Class<DrawerActivity> GOTO_ACTIVITY = DrawerActivity.class;
 
     /* public void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -73,7 +79,7 @@ public class WelcomeActivity extends AppCompatActivity {
                         waited += 100;
                     }
 
-                    Intent intent = new Intent(WelcomeActivity.this, MenuActivity.class);
+                    Intent intent = new Intent(WelcomeActivity.this, GOTO_ACTIVITY);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     WelcomeActivity.this.finish();
