@@ -14,7 +14,7 @@ import com.app.yasmina.medical.R;
 
 import java.util.List;
 
-class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.MyViewHolder> {
+public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.MyViewHolder> {
 
     private final Typeface FONT_REGULAR = Typeface.createFromAsset(MenuActivity.assetManager,
             "fonts/Font-Regular.ttf");

@@ -35,7 +35,7 @@ public class KysteFragment extends Fragment {
         mTitle.setText(getResources().getText(R.string.kyste_title));
         mDescriptionOne.setText(getResources().getText(R.string.kyste_description_one));
         mDescriptionTwo.setText(getResources().getText(R.string.kyste_description_two));
-        mImage.setImageResource(R.drawable.thyroide_blure_resize);
+        mImage.setImageResource(R.drawable.gonglion);
 
         // Inflate the layout for this fragment
         return view;

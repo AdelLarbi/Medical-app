@@ -34,7 +34,7 @@ public class MacrocalcificationFragment extends Fragment {
         mTitle.setText(getResources().getText(R.string.macro_title));
         mDescriptionOne.setText(getResources().getText(R.string.macro_description_one));
         mDescriptionTwo.setText(getResources().getText(R.string.macro_description_two));
-        mImage.setImageResource(R.drawable.thyroide_blure_resize);
+        mImage.setImageResource(R.drawable.macrocalcification_isolee);
 
         // Inflate the layout for this fragment
         return view;
