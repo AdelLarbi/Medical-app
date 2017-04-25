@@ -4,14 +4,25 @@
     <string name="image_description">Nodule Thyroïdien TIRADS</string>
     <string name="title_activity_drawer">DrawerActivity</string>
 
+    <!-- Drawer -->
     <string name="drawer_title">Nodule Thyroïdien : TIRADS</string>
     <string name="kyste">Kyste</string>
-    <string name="macrocalcification">Macrocalcification isolée</string>
+    <string name="macro">Macrocalcification isolée</string>
     <string name="nodule_hyper">Nodule hyper-échogène</string>
     <string name="nodule_iso">Nodule iso-échogène</string>
     <string name="nodule_hypo">Nodule hypo-échogène</string>
     <string name="communicate">Communication</string>
     <string name="about">À propos</string>
+
+    <!-- Fragment : Kyste -->
+    <string name="kyste_title">Kyste thyroidien : TIRADS 2</string>
+    <string name="kyste_description_one">Risque de malignité : 0%</string>
+    <string name="kyste_description_two">Surveillance clinique</string>
+
+    <!-- Fragment : Macrocalcification isolée -->
+    <string name="macro_title">Macrocalcification isolée : TIRADS 2</string>
+    <string name="macro_description_one">Risque de malignité : 0%</string>
+    <string name="macro_description_two">Surveillance clinique</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

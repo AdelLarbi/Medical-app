@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.app.yasmina.medical.R;
 
@@ -13,7 +15,6 @@ import com.app.yasmina.medical.R;
  * A simple {@link Fragment} subclass.
  */
 public class KysteFragment extends Fragment {
-
 
     public KysteFragment() {
         // Required empty public constructor
@@ -23,8 +24,21 @@ public class KysteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_card_non_expandabale, container, false);
+
+        TextView mTitle = (TextView) view.findViewById(R.id.tv_title);
+        TextView mDescriptionOne = (TextView) view.findViewById(R.id.tv_description_1);
+        TextView mDescriptionTwo = (TextView) view.findViewById(R.id.tv_description_2);
+        ImageView mImage = (ImageView) view.findViewById(R.id.iv_image);
+
+        mTitle.setText(getResources().getText(R.string.kyste_title));
+        mDescriptionOne.setText(getResources().getText(R.string.kyste_description_one));
+        mDescriptionTwo.setText(getResources().getText(R.string.kyste_description_two));
+        mImage.setImageResource(R.drawable.thyroide_blure_resize);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kyste, container, false);
+        return view;
     }
 
 }
