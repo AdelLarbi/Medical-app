@@ -1,5 +1,6 @@
 package com.app.yasmina.medical.activity;
 
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +16,6 @@ public class MenuActivity extends AppCompatActivity {
 
     private CardContentAdapter adapter;
     private List<CardContent> cardList;
-    static public AssetManager assetManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +23,6 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
-        // The application's asset manager. Helper for font customisation
-        assetManager = getAssets();
 
         cardList = new ArrayList<>();
         adapter = new CardContentAdapter(cardList);

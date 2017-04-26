@@ -1,6 +1,5 @@
 package com.app.yasmina.medical.activity;
 
-
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;

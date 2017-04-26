@@ -11,19 +11,20 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.app.yasmina.medical.R;
+import com.app.yasmina.medical.fragment.NoduleHypoFragment;
 
 import java.util.List;
 
 public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.MyViewHolder> {
 
-    private final Typeface FONT_REGULAR = Typeface.createFromAsset(MenuActivity.assetManager,
+    private final Typeface FONT_REGULAR = Typeface.createFromAsset(NoduleHypoFragment.assetManager,
             "fonts/Font-Regular.ttf");
-    private final Typeface FONT_MEDIUM = Typeface.createFromAsset(MenuActivity.assetManager,
+    private final Typeface FONT_MEDIUM = Typeface.createFromAsset(NoduleHypoFragment.assetManager,
             "fonts/Font-Medium.ttf");
 
     private List<CardContent> cardList;
 
-    CardContentAdapter(List<CardContent> cardList) {
+    public CardContentAdapter(List<CardContent> cardList) {
         this.cardList = cardList;
     }
 
