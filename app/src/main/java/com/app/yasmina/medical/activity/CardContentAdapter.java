@@ -7,11 +7,13 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.app.yasmina.medical.R;
 import com.app.yasmina.medical.fragment.NoduleHypoFragment;
+import com.app.yasmina.medical.other.CardContent;
 
 import java.util.List;
 
@@ -29,25 +31,43 @@ public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.
     }
 
     class MyViewHolder extends ViewHolder {
-        private TextView cardTitle;
-        private TextView cardText;
+        private TextView mCardHeaderTitle;
+        private TextView mCardFooterTitle;
+        private TextView mCardImageTitleOne;
+        private TextView mCardImageTitleTwo;
+        private TextView mCardFooterTextOne;
+        private TextView mCardFooterTextTwo;
 
-        private RelativeLayout cardContentLayout;
+        private ImageView mCardImageOne;
+        private ImageView mCardImageTwo;
+
+        private RelativeLayout mCardFooterMainLayout;
 
         private MyViewHolder(View view) {
             super(view);
 
-            cardTitle = (TextView) view.findViewById(R.id.card_header);
-            cardText = (TextView) view.findViewById(R.id.card_text);
+            mCardHeaderTitle = (TextView) view.findViewById(R.id.tv_card_header_title);
+            mCardFooterTitle = (TextView) view.findViewById(R.id.tv_card_footer_title);
+            mCardImageTitleOne = (TextView) view.findViewById(R.id.tv_card_image_title_one);
+            mCardImageTitleTwo = (TextView) view.findViewById(R.id.tv_card_image_title_two);
+            mCardFooterTextOne = (TextView) view.findViewById(R.id.tv_card_footer_text_one);
+            mCardFooterTextTwo = (TextView) view.findViewById(R.id.tv_card_footer_text_two);
 
-            cardTitle.setTypeface(FONT_REGULAR);
-            cardText.setTypeface(FONT_REGULAR);
+            mCardImageOne = (ImageView) view.findViewById(R.id.iv_card_image_one);
+            mCardImageTwo = (ImageView) view.findViewById(R.id.iv_card_image_two);
 
-            cardContentLayout = (RelativeLayout) view.findViewById(R.id.card_content);
-            cardContentLayout.setVisibility(View.GONE);
+            mCardHeaderTitle.setTypeface(FONT_REGULAR);
+            mCardFooterTitle.setTypeface(FONT_REGULAR);
+            mCardImageTitleOne.setTypeface(FONT_REGULAR);
+            mCardImageTitleTwo.setTypeface(FONT_REGULAR);
+            mCardFooterTextOne.setTypeface(FONT_REGULAR);
+            mCardFooterTextTwo.setTypeface(FONT_REGULAR);
 
-            cardTitle.setOnTouchListener(touchListener);
-            cardContentLayout.setOnClickListener(hideContent);
+            mCardFooterMainLayout = (RelativeLayout) view.findViewById(R.id.rl_card_footer_main_layout);
+            mCardFooterMainLayout.setVisibility(View.GONE);
+
+            mCardHeaderTitle.setOnTouchListener(touchListener);
+            mCardFooterMainLayout.setOnClickListener(hideContent);
         }
     }
 
@@ -123,9 +143,18 @@ public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
+
         CardContent cards = cardList.get(position);
-        holder.cardTitle.setText(cards.getTitle());
-        holder.cardText.setText(cards.getInformations().get(0));
+
+        holder.mCardHeaderTitle.setText(cards.getHeaderTitle());
+        holder.mCardFooterTitle.setText(cards.getFooterTitle());
+        holder.mCardImageTitleOne.setText(cards.getImageTitleOne());
+        holder.mCardImageTitleTwo.setText(cards.getImageTitleTwo());
+        holder.mCardFooterTextOne.setText(cards.getFooterTextOne());
+        holder.mCardFooterTextTwo.setText(cards.getFooterTextTwo());
+
+        holder.mCardImageOne.setImageDrawable(cards.getImageOne());
+        holder.mCardImageTwo.setImageDrawable(cards.getImageTwo());
     }
 
     @Override

@@ -17,13 +17,36 @@
     <!-- Fragment : Kyste -->
     <string name="kyste_title">Kyste thyroidien : TIRADS 2</string>
     <string name="kyste_description_one">Risque de malignité : 0%</string>
-    <string name="kyste_description_two">Surveillance clinique</string>
+    <string name="kyste_description_two">CAT : Surveillance clinique</string>
 
     <!-- Fragment : Macrocalcification isolée -->
     <string name="macro_title">Macrocalcification isolée : TIRADS 2</string>
     <string name="macro_description_one">Risque de malignité : 0%</string>
-    <string name="macro_description_two">Surveillance clinique</string>
+    <string name="macro_description_two">CAT : Surveillance clinique</string>
 
+    <!-- Fragment : Nodule hypo-échogène -->
+    <!-- First card -->
+    <string name="hypo_one_header">Absence de signes forts</string>
+    <string name="hypo_one_footer_title">TIRADS 2A : Nodule modérément hypoéchogène, sans signes forts</string>
+    <string name="hypo_one_footer_text_one">Risque de malignité : 6%</string>
+    <string name="hypo_one_footer_text_two">CAT : Cytoponction</string>
+
+    <!-- Second card -->
+    <string name="hypo_two_header">1 ou 2 signes forts et absence d\'adénopathie</string>
+    <string name="hypo_one_header_bis">Parmis les signes forts : Plus épais que large / Contours anguleux ou lobulés / Microcalifications / Fortement hypoéchogène / Indice de rigidité élevé / en élastographie</string>
+    <string name="hypo_two_footer_title">TIRADS 2B : Nodule hypoéchogène, avec 1 à 2 signes forts et absence d\'adénopathie</string>
+    <string name="hypo_two_footer_text_one">Risque de malignité : 69%</string>
+    <string name="hypo_two_footer_text_two">CAT : Cytoponction</string>
+
+    <!-- Third card -->
+    <string name="hypo_three_header">3 à 5 signes forts et/ou adénopathie</string>
+    <string name="hypo_three_footer_title">TIRADS 5 : Nodule hypoéchogène, avec 3 à 5 signes forts et/ou adénopathie</string>
+    <string name="hypo_three_footer_image_title_one">Nodule</string>
+    <string name="hypo_three_footer_image_title_two">Adénopathie</string>
+    <string name="hypo_three_footer_text_one">Risque de malignité : 100%</string>
+    <string name="hypo_three_footer_text_two">CAT : Cytoponction</string>
+
+    <!-- -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

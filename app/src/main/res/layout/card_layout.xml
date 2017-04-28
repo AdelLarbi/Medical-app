@@ -2,7 +2,7 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view"
+    android:id="@+id/cv_card"
     android:background="@android:color/white"
     android:layout_gravity="center"
     android:layout_width="match_parent"
@@ -13,12 +13,12 @@
     card_view:cardCornerRadius="3dp" >
 
     <RelativeLayout
-        android:id="@+id/card_layout"
+        android:id="@+id/rl_card_main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
         <TextView
-            android:id="@+id/card_header"
+            android:id="@+id/tv_card_header_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -27,48 +27,79 @@
             android:textSize="19sp" />
 
         <RelativeLayout
-            android:id="@+id/card_content"
+            android:id="@+id/rl_card_footer_main_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/card_header" >
+            android:layout_below="@id/tv_card_header_title" >
 
             <View
-                android:id="@+id/separator"
+                android:id="@+id/v_separator"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginBottom="10dp"
                 android:background="@color/grey300" />
 
             <RelativeLayout
-                android:id="@+id/card_footer"
+                android:id="@+id/rl_card_footer_lyout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingRight="10dp"
                 android:paddingLeft="10dp"
                 android:paddingBottom="10dp"
-                android:layout_below="@id/separator" >
+                android:layout_below="@id/v_separator" >
 
                 <TextView
-                    android:id="@+id/card_text"
+                    android:id="@+id/tv_card_footer_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="This is Patrick 1 !"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/iv_card_image_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_card_footer_title"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/tv_card_image_title_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textSize="18sp" />
 
                 <ImageView
-                    android:id="@+id/card_image"
+                    android:id="@+id/iv_card_image_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/card_text"
+                    android:layout_below="@id/iv_card_image_one"
                     android:src="@mipmap/ic_launcher" />
 
                 <TextView
+                    android:id="@+id/tv_card_image_title_two"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_below="@id/card_image"
-                    android:text="This is Patrick !"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_card_footer_text_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_below="@id/iv_card_image_one"
+                    android:text="This is Patrick 4 !"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_card_footer_text_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_below="@id/tv_card_footer_text_one"
+                    android:text="This is Patrick 5 !"
                     android:textSize="18sp" />
 
             </RelativeLayout>
