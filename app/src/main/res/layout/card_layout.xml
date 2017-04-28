@@ -40,7 +40,7 @@
                 android:background="@color/grey300" />
 
             <RelativeLayout
-                android:id="@+id/rl_card_footer_lyout"
+                android:id="@+id/rl_card_footer_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingRight="10dp"
@@ -48,49 +48,63 @@
                 android:paddingBottom="10dp"
                 android:layout_below="@id/v_separator" >
 
+                <!-- FIXME: reduce space between text and image-->
                 <TextView
                     android:id="@+id/tv_card_footer_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="This is Patrick 1 !"
                     android:textSize="18sp" />
 
-                <ImageView
-                    android:id="@+id/iv_card_image_one"
-                    android:layout_width="match_parent"
+                <FrameLayout
+                    android:id="@+id/fl_frame_one"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_card_footer_title"
-                    android:src="@mipmap/ic_launcher" />
+                    android:layout_below="@id/tv_card_footer_title" >
 
-                <TextView
-                    android:id="@+id/tv_card_image_title_one"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="18sp" />
+                    <ImageView
+                        android:id="@+id/iv_card_image_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_launcher" />
 
-                <ImageView
-                    android:id="@+id/iv_card_image_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/iv_card_image_one"
-                    android:src="@mipmap/ic_launcher" />
+                    <TextView
+                        android:id="@+id/tv_card_image_title_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/holo_orange_light"
+                        android:gravity="center"
+                        android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/tv_card_image_title_two"
-                    android:layout_width="match_parent"
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_frame_two"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="18sp" />
+                    android:layout_below="@id/fl_frame_one" >
+
+                    <ImageView
+                        android:id="@+id/iv_card_image_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/tv_card_image_title_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/holo_orange_light"
+                        android:gravity="center"
+                        android:textSize="18sp" />
+
+                </FrameLayout>
 
                 <TextView
                     android:id="@+id/tv_card_footer_text_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/fl_frame_two"
                     android:gravity="center"
-                    android:layout_below="@id/iv_card_image_one"
-                    android:text="This is Patrick 4 !"
                     android:textSize="18sp" />
 
                 <TextView
@@ -99,7 +113,6 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_below="@id/tv_card_footer_text_one"
-                    android:text="This is Patrick 5 !"
                     android:textSize="18sp" />
 
             </RelativeLayout>
