@@ -4,13 +4,13 @@ import android.graphics.drawable.Drawable;
 
 public class CardContent {
     private String header;
-    private String[] contents;
-    private Drawable[] images;
+    private String[] footerTexts;
+    private Drawable[] footerImages;
 
-    public CardContent(String header, String[] contents, Drawable[] images) {
+    public CardContent(String header, String[] footerTexts, Drawable[] footerImages) {
         this.header = header;
-        this.contents = contents;
-        this.images = images;
+        this.footerTexts = footerTexts;
+        this.footerImages = footerImages;
     }
 
     public String getHeaderTitle() {
@@ -20,36 +20,36 @@ public class CardContent {
 
     public Drawable getImageOne() {
 
-        return images[0];
+        return footerImages[0];
     }
 
     public Drawable getImageTwo() {
 
-        return images[1];
+        return footerImages[1];
     }
 
     public String getFooterTitle() {
 
-        return contents[0];
+        return footerTexts[0];
     }
 
     public String getImageTitleOne() {
 
-        return contents[1];
+        return footerTexts[1];
     }
 
     public String getImageTitleTwo() {
 
-        return contents[2];
+        return footerTexts[2];
     }
 
     public String getFooterTextOne() {
 
-        return contents[3];
+        return footerTexts[3];
     }
 
     public String getFooterTextTwo() {
 
-        return contents[4];
+        return footerTexts[4];
     }
 }

@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,15 +29,6 @@ public class NoduleHypoFragment extends Fragment {
     private CardContentAdapter adapter;
     private List<CardContent> cardList;
     static public AssetManager assetManager;
-
-    // Footer content : information's rank
-    private final int TITLE = 0;
-    private final int IMAGE_TITLE_ONE = 1;
-    private final int IMAGE_TITLE_TWO = 2;
-    private final int TEXT_ONE = 3;
-    private final int TEXT_TWO = 4;
-    private final int IMAGE_ONE = 0;
-    private final int IMAGE_TWO = 1;
 
     public NoduleHypoFragment() {
         // Required empty public constructor
@@ -61,6 +53,7 @@ public class NoduleHypoFragment extends Fragment {
 
         recyclerView.setAdapter(adapter);
 
+        Log.i("NoduleHypoFragment", "prepareCards()");
         prepareCards();
 
         // Inflate the layout for this fragment
@@ -68,44 +61,56 @@ public class NoduleHypoFragment extends Fragment {
     }
 
     private void prepareCards() {
-        String headerText;
-        String[] footerTexts = new String[5];
-        Drawable[] footerImages = new Drawable[2];
+
+        final int CARDS_COUNT = 3;
+        final int FOOTER_TEXTS_COUNT = 5;
+        final int FOOTER_IMAGES_COUNT = 2;
+
+        final int CARD_ONE = 0;
+        final int CARD_TWO = 1;
+        final int CARD_THREE = 2;
+
+        final int TITLE = 0;
+        final int IMAGE_TITLE_ONE = 1;
+        final int IMAGE_TITLE_TWO = 2;
+        final int TEXT_ONE = 3;
+        final int TEXT_TWO = 4;
+
+        final int IMAGE_ONE = 0;
+        final int IMAGE_TWO = 1;
+
+        String[] cardHeaderText = new String[CARDS_COUNT];
+        String[][] cardFooterTexts = new String[CARDS_COUNT][FOOTER_TEXTS_COUNT];
+        Drawable[][] cardFooterImages  = new Drawable[CARDS_COUNT][FOOTER_IMAGES_COUNT];
 
         // First Card
-        headerText = (String) getResources().getText(R.string.hypo_one_header);
-        footerTexts[TITLE] = (String) getResources().getText(R.string.hypo_one_footer_title);
-        footerTexts[TEXT_ONE] = (String) getResources().getText(R.string.hypo_one_footer_text_one);
-        footerTexts[TEXT_TWO] = (String) getResources().getText(R.string.hypo_one_footer_text_two);
-        footerImages[IMAGE_TWO] = ContextCompat.getDrawable(getContext(), R.drawable.gonglion);
-        cardList.add(new CardContent(headerText, footerTexts, footerImages));
+        cardHeaderText[CARD_ONE] = (String) getResources().getText(R.string.hypo_one_header);
+        cardFooterTexts[CARD_ONE][TITLE] = (String) getResources().getText(R.string.hypo_one_footer_title);
+        cardFooterTexts[CARD_ONE][TEXT_ONE] = (String) getResources().getText(R.string.hypo_one_footer_text_one);
+        cardFooterTexts[CARD_ONE][TEXT_TWO] = (String) getResources().getText(R.string.hypo_one_footer_text_two);
+        cardFooterImages[CARD_ONE][IMAGE_TWO] = ContextCompat.getDrawable(getContext(), R.drawable.gonglion);
 
-        /*
-        // TODO: Second Card
-        headerText = (String) getResources().getText(R.string.hypo_two_header);
-        // FIXME: header_bis
-        footerTexts[TITLE] = (String) getResources().getText(R.string.hypo_two_footer_title);
-        footerTexts[TEXT_ONE] = (String) getResources().getText(R.string.hypo_two_footer_text_one);
-        footerTexts[TEXT_TWO] = (String) getResources().getText(R.string.hypo_two_footer_text_two);
-        footerImages[IMAGE_TWO] = ContextCompat.getDrawable(getContext(), R.drawable.);
-        cardList.add(new CardContent(headerText, footerTexts, footerImages));
-        */
+        // Second Card
+        cardHeaderText[CARD_TWO] = (String) getResources().getText(R.string.hypo_two_header);
+        // TODO: header_bis
+        cardFooterTexts[CARD_TWO][TITLE] = (String) getResources().getText(R.string.hypo_two_footer_title);
+        cardFooterTexts[CARD_TWO][TEXT_ONE] = (String) getResources().getText(R.string.hypo_two_footer_text_one);
+        cardFooterTexts[CARD_TWO][TEXT_TWO] = (String) getResources().getText(R.string.hypo_two_footer_text_two);
+        cardFooterImages[CARD_TWO][IMAGE_TWO] = ContextCompat.getDrawable(getContext(), R.drawable.nodule_hypo);
 
-        // FIXME: var names
-        String headerText2;
-        String[] footerTexts2 = new String[5];
-        Drawable[] footerImages2 = new Drawable[2];
+        // Third Card
+        cardHeaderText[CARD_THREE] = (String) getResources().getText(R.string.hypo_three_header);
+        cardFooterTexts[CARD_THREE][TITLE] = (String) getResources().getText(R.string.hypo_three_footer_title);
+        cardFooterTexts[CARD_THREE][IMAGE_TITLE_ONE] = (String) getResources().getText(R.string.hypo_three_footer_image_title_one);
+        cardFooterTexts[CARD_THREE][IMAGE_TITLE_TWO] = (String) getResources().getText(R.string.hypo_three_footer_image_title_two);
+        cardFooterTexts[CARD_THREE][TEXT_ONE] = (String) getResources().getText(R.string.hypo_three_footer_text_one);
+        cardFooterTexts[CARD_THREE][TEXT_TWO] = (String) getResources().getText(R.string.hypo_three_footer_text_two);
+        cardFooterImages[CARD_THREE][IMAGE_ONE] = ContextCompat.getDrawable(getContext(), R.drawable.thyroide);
+        cardFooterImages[CARD_THREE][IMAGE_TWO] = ContextCompat.getDrawable(getContext(), R.drawable.gonglion);
 
-        // TODO: Third Card
-        headerText2 = (String) getResources().getText(R.string.hypo_three_header);
-        footerTexts2[TITLE] = (String) getResources().getText(R.string.hypo_three_footer_title);
-        footerTexts2[IMAGE_TITLE_ONE] = (String) getResources().getText(R.string.hypo_three_footer_image_title_one);
-        footerTexts2[IMAGE_TITLE_TWO] = (String) getResources().getText(R.string.hypo_three_footer_image_title_two);
-        footerTexts2[TEXT_ONE] = (String) getResources().getText(R.string.hypo_three_footer_text_one);
-        footerTexts2[TEXT_TWO] = (String) getResources().getText(R.string.hypo_three_footer_text_two);
-        footerImages2[IMAGE_ONE] = ContextCompat.getDrawable(getContext(), R.drawable.thyroide);
-        footerImages2[IMAGE_TWO] = ContextCompat.getDrawable(getContext(), R.drawable.gonglion);
-        cardList.add(new CardContent(headerText2, footerTexts2, footerImages2));
+        for (int i = 0; i < CARDS_COUNT; i++) {
+            cardList.add(new CardContent(cardHeaderText[i], cardFooterTexts[i], cardFooterImages[i]));
+        }
 
         adapter.notifyDataSetChanged();
     }
