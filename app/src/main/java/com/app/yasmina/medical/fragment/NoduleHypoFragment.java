@@ -88,7 +88,7 @@ public class NoduleHypoFragment extends Fragment {
         cardFooterTexts[CARD_ONE][TITLE] = (String) getResources().getText(R.string.hypo_one_footer_title);
         cardFooterTexts[CARD_ONE][TEXT_ONE] = (String) getResources().getText(R.string.hypo_one_footer_text_one);
         cardFooterTexts[CARD_ONE][TEXT_TWO] = (String) getResources().getText(R.string.hypo_one_footer_text_two);
-        cardFooterImages[CARD_ONE][IMAGE_TWO] = ContextCompat.getDrawable(getContext(), R.drawable.gonglion);
+        cardFooterImages[CARD_ONE][IMAGE_TWO] = ContextCompat.getDrawable(getContext(), R.drawable.nodule_hypochogne);
 
         // Second Card
         cardHeaderText[CARD_TWO] = (String) getResources().getText(R.string.hypo_two_header);

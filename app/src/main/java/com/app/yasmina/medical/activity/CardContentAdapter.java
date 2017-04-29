@@ -1,12 +1,15 @@
 package com.app.yasmina.medical.activity;
 
 import android.graphics.Typeface;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -42,6 +45,7 @@ public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.
         private ImageView mCardImageTwo;
 
         private RelativeLayout mCardFooterMainLayout;
+        private FrameLayout mCardFooterFrameLayoutOne;
 
         private MyViewHolder(View view) {
             super(view);
@@ -63,6 +67,7 @@ public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.
             mCardFooterTextOne.setTypeface(FONT_REGULAR);
             mCardFooterTextTwo.setTypeface(FONT_REGULAR);
 
+            mCardFooterFrameLayoutOne = (FrameLayout) view.findViewById(R.id.fl_frame_one);
             mCardFooterMainLayout = (RelativeLayout) view.findViewById(R.id.rl_card_footer_main_layout);
             mCardFooterMainLayout.setVisibility(View.GONE);
 
@@ -155,6 +160,12 @@ public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.
 
         holder.mCardImageOne.setImageDrawable(cards.getImageOne());
         holder.mCardImageTwo.setImageDrawable(cards.getImageTwo());
+
+        // If there is only one image, hide the frame of the second one
+        if ((String.valueOf(cards.getImageOne())).equals("null")) {
+            holder.mCardFooterFrameLayoutOne.setVisibility(View.GONE);
+            holder.mCardImageTitleTwo.setVisibility(View.GONE);
+        }
     }
 
     @Override
