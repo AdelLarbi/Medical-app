@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Medical</string>
+    <string name="app_name">Nodule Thyroïdien : TIRADS</string>
     <string name="welcome_title">Nodule Thyroïdien \nTIRADS</string>
     <string name="image_description">Nodule Thyroïdien TIRADS</string>
     <string name="title_activity_drawer">DrawerActivity</string>
 
-    <!-- Drawer -->
+    <!-- Drawer =================================================================================-->
     <string name="drawer_title">Nodule Thyroïdien : TIRADS</string>
     <string name="kyste">Kyste</string>
     <string name="macro">Macrocalcification isolée</string>
@@ -14,31 +14,67 @@
     <string name="communicate">Communication</string>
     <string name="about">À propos</string>
 
-    <!-- Fragment : Kyste -->
+
+    <!-- Fragment 1: Kyste =======================================================================-->
     <string name="kyste_title">Kyste thyroidien : TIRADS 2</string>
     <string name="kyste_description_one">Risque de malignité : 0%</string>
     <string name="kyste_description_two">CAT : Surveillance clinique</string>
 
-    <!-- Fragment : Macrocalcification isolée -->
+
+    <!-- Fragment 2: Macrocalcification isolée ===================================================-->
     <string name="macro_title">Macrocalcification isolée : TIRADS 2</string>
     <string name="macro_description_one">Risque de malignité : 0%</string>
     <string name="macro_description_two">CAT : Surveillance clinique</string>
 
-    <!-- Fragment : Nodule hypo-échogène -->
+
+    <!-- Fragment 3: Nodule hyper-échogène =======================================================-->
+    <!-- First card -->
+    <string name="hyp_one_header">Absence de signes forts</string>
+    <string name="hyp_one_footer_title">TIRADS 3 : Nodule hyper-échogène, sans signe d\'alarme</string>
+    <string name="hyp_one_footer_text_one">Risque de malignité : 0.25%</string>
+    <string name="hyp_one_footer_text_two">Surveillance échographique annuelle</string>
+
+    <!-- Second card -->
+    <string name="hyp_two_header">Présence d\'au moins un signe fort</string>
+    <!-- TODO: header_bis -->
+    <string name="hyp_two_header_bis">Parmis les signes forts : Plus épais que large / Contours anguleux ou lobulés / Microcalifications / Indice de rigidité élevé en élastographie</string>
+    <string name="hyp_two_footer_title">TIRADS 4B : Présence au moins d\' un signe fort</string>
+    <string name="hyp_two_footer_text_one">Risque de malignité : 69%</string>
+    <string name="hyp_two_footer_text_two">CAT : Cytoponction</string>
+
+
+    <!-- Fragment 4: Nodule iso-échogène ========================================================-->
+    <!-- First card -->
+    <string name="iso_one_header">Absence de signes forts</string>
+    <string name="iso_one_footer_title">TIRADS 3 : Nodule iso-échogène, sans signe d\'alarme</string>
+    <string name="iso_one_footer_text_one">Risque de malignité : 0.25%</string>
+    <string name="iso_one_footer_text_two">Surveillance échographique annuelle</string>
+
+    <!-- Second card -->
+    <string name="iso_two_header">Présence d\'au moins un signe fort</string>
+    <!-- TODO: header_bis -->
+    <string name="iso_two_header_bis">Parmis les signes forts : Plus épais que large / Contours anguleux ou lobulés / Microcalifications / Indice de rigidité élevé en élastographie</string>
+    <string name="iso_two_footer_title">TIRADS 4B : Présence au moins d\' un signe fort</string>
+    <string name="iso_two_footer_text_one">Risque de malignité : 69%</string>
+    <string name="iso_two_footer_text_two">CAT : Cytoponction</string>
+
+    <!-- Fragment 5: Nodule hypo-échogène ========================================================-->
     <!-- First card -->
     <string name="hypo_one_header">Absence de signes forts</string>
-    <string name="hypo_one_footer_title">TIRADS 2A : Nodule modérément hypoéchogène, sans signes forts</string>
+    <string name="hypo_one_footer_title">TIRADS 4A : Nodule modérément hypoéchogène, sans signes forts</string>
     <string name="hypo_one_footer_text_one">Risque de malignité : 6%</string>
     <string name="hypo_one_footer_text_two">CAT : Cytoponction</string>
 
     <!-- Second card -->
     <string name="hypo_two_header">1 ou 2 signes forts et absence d\'adénopathie</string>
-    <string name="hypo_one_header_bis">Parmis les signes forts : Plus épais que large / Contours anguleux ou lobulés / Microcalifications / Fortement hypoéchogène / Indice de rigidité élevé / en élastographie</string>
-    <string name="hypo_two_footer_title">TIRADS 2B : Nodule hypoéchogène, avec 1 à 2 signes forts et absence d\'adénopathie</string>
+    <!-- TODO: header_bis -->
+    <string name="hypo_one_header_bis">Parmis les signes forts : Plus épais que large / Contours anguleux ou lobulés / Microcalifications / Fortement hypoéchogène / Indice de rigidité élevé en élastographie</string>
+    <string name="hypo_two_footer_title">TIRADS 4B : Nodule hypoéchogène, avec 1 à 2 signes forts et absence d\'adénopathie</string>
     <string name="hypo_two_footer_text_one">Risque de malignité : 69%</string>
     <string name="hypo_two_footer_text_two">CAT : Cytoponction</string>
 
     <!-- Third card -->
+    <!-- FIXME: click title bug -->
     <string name="hypo_three_header">3 à 5 signes forts et/ou adénopathie</string>
     <string name="hypo_three_footer_title">TIRADS 5 : Nodule hypoéchogène, avec 3 à 5 signes forts et/ou adénopathie</string>
     <string name="hypo_three_footer_image_title_one">Nodule</string>
@@ -46,12 +82,13 @@
     <string name="hypo_three_footer_text_one">Risque de malignité : 100%</string>
     <string name="hypo_three_footer_text_two">CAT : Cytoponction</string>
 
-    <!-- Fragment : About -->
-    <string name="about_names">A.MEKKI / S.AMMARI</string>
+
+    <!-- Fragment 6: About =======================================================================-->
+    <string name="about_names">A.MEKKI / S.AMMARI / A.LARBI</string>
     <string name="about_section_one">Horvath E et al, .An ultrasonogram reporting system for thyroid nodules stratifying cancer risk for clinical management. Journal of Clinical Endocrinology and Metabolism 200990 1748–1751</string>
     <string name="about_section_two">Russ G et al, Prospective evaluation of thyroid imaging reporting and data system on 4550 nodules with and without elastography. Eur J Endocrinol. 2013 Apr 15;168(5):649-55</string>
 
-    <!-- -->
+    <!-- ??? ========================================================-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

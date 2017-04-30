@@ -1,6 +1,7 @@
 package com.app.yasmina.medical.activity;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
@@ -25,6 +26,8 @@ import com.app.yasmina.medical.fragment.NoduleIsoFragment;
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    static public AssetManager assetManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,9 @@ public class DrawerActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // The application's asset manager. Helper for font customisation
+        assetManager = getApplicationContext().getAssets();
 
         // The main fragment view : Kyste
         setTitle(getResources().getText(R.string.kyste));

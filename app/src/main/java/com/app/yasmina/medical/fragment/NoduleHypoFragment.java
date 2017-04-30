@@ -28,7 +28,6 @@ public class NoduleHypoFragment extends Fragment {
 
     private CardContentAdapter adapter;
     private List<CardContent> cardList;
-    static public AssetManager assetManager;
 
     public NoduleHypoFragment() {
         // Required empty public constructor
@@ -42,9 +41,6 @@ public class NoduleHypoFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_cards_in_fragment);
 
-        // The application's asset manager. Helper for font customisation
-        assetManager = view.getContext().getAssets();
-
         cardList = new ArrayList<>();
         adapter = new CardContentAdapter(cardList);
 
@@ -53,7 +49,6 @@ public class NoduleHypoFragment extends Fragment {
 
         recyclerView.setAdapter(adapter);
 
-        Log.i("NoduleHypoFragment", "prepareCards()");
         prepareCards();
 
         // Inflate the layout for this fragment

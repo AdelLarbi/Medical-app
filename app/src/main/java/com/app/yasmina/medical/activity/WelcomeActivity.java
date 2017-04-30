@@ -14,6 +14,7 @@ import com.app.yasmina.medical.R;
 public class WelcomeActivity extends AppCompatActivity {
 
     private final Class<DrawerActivity> GOTO_ACTIVITY = DrawerActivity.class;
+    //TODO: menu after the splash screen
 
     /* public void onAttachedToWindow() {
         super.onAttachedToWindow();

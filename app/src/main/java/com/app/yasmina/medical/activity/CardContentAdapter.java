@@ -22,9 +22,9 @@ import java.util.List;
 
 public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.MyViewHolder> {
 
-    private final Typeface FONT_REGULAR = Typeface.createFromAsset(NoduleHypoFragment.assetManager,
+    private final Typeface FONT_REGULAR = Typeface.createFromAsset(DrawerActivity.assetManager,
             "fonts/Font-Regular.ttf");
-    private final Typeface FONT_MEDIUM = Typeface.createFromAsset(NoduleHypoFragment.assetManager,
+    private final Typeface FONT_MEDIUM = Typeface.createFromAsset(DrawerActivity.assetManager,
             "fonts/Font-Medium.ttf");
 
     private List<CardContent> cardList;
