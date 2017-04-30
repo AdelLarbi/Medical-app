@@ -46,6 +46,11 @@
     <string name="hypo_three_footer_text_one">Risque de malignité : 100%</string>
     <string name="hypo_three_footer_text_two">CAT : Cytoponction</string>
 
+    <!-- Fragment : About -->
+    <string name="about_names">A.MEKKI / S.AMMARI</string>
+    <string name="about_section_one">Horvath E et al, .An ultrasonogram reporting system for thyroid nodules stratifying cancer risk for clinical management. Journal of Clinical Endocrinology and Metabolism 200990 1748–1751</string>
+    <string name="about_section_two">Russ G et al, Prospective evaluation of thyroid imaging reporting and data system on 4550 nodules with and without elastography. Eur J Endocrinol. 2013 Apr 15;168(5):649-55</string>
+
     <!-- -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

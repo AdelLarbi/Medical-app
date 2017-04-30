@@ -24,7 +24,7 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.splash_screen);
 
         TextView txt = (TextView) findViewById(R.id.welcome_title);
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/Font-Bold.ttf");

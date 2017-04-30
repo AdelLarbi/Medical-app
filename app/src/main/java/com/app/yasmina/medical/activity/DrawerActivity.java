@@ -25,8 +25,6 @@ import com.app.yasmina.medical.fragment.NoduleIsoFragment;
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static Context _CONTEXT = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +41,11 @@ public class DrawerActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        _CONTEXT = getApplicationContext();
+        // The main fragment view : Kyste
+        setTitle(getResources().getText(R.string.kyste));
+        KysteFragment fragment = new KysteFragment();
+        FragmentManager fm = getSupportFragmentManager();
+        fm.beginTransaction().replace(R.id.content_drawer, fragment).commit();
     }
 
     @Override
@@ -70,7 +72,10 @@ public class DrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.action_about) {
-            Toast.makeText(this, "About !", Toast.LENGTH_SHORT).show();
+            setTitle(getResources().getText(R.string.about));
+            AboutFragment fragment = new AboutFragment();
+            FragmentManager fm = getSupportFragmentManager();
+            fm.beginTransaction().replace(R.id.content_drawer, fragment).commit();
             return true;
         }
 

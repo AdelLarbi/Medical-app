@@ -41,6 +41,7 @@ public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.
         private TextView mCardFooterTextOne;
         private TextView mCardFooterTextTwo;
 
+        private ImageView mCardHeaderImageArrow;
         private ImageView mCardImageOne;
         private ImageView mCardImageTwo;
 
@@ -57,6 +58,7 @@ public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.
             mCardFooterTextOne = (TextView) view.findViewById(R.id.tv_card_footer_text_one);
             mCardFooterTextTwo = (TextView) view.findViewById(R.id.tv_card_footer_text_two);
 
+            mCardHeaderImageArrow = (ImageView) view.findViewById(R.id.iv_card_header_arrow);
             mCardImageOne = (ImageView) view.findViewById(R.id.iv_card_image_one);
             mCardImageTwo = (ImageView) view.findViewById(R.id.iv_card_image_two);
 
@@ -120,7 +122,8 @@ public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.
     private View getContentView(View view) {
         ViewGroup parent = (ViewGroup) view.getParent();
 
-        return parent.getChildAt(1);
+        // 2 is the rank of tv_card_header_title in the xml file
+        return parent.getChildAt(2);
     }
 
     private View.OnClickListener hideContent = new View.OnClickListener() {
@@ -141,7 +144,7 @@ public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_layout, parent, false);
+                .inflate(R.layout.fragment_card_expandable, parent, false);
 
         return new MyViewHolder(view);
     }
@@ -161,7 +164,7 @@ public class CardContentAdapter extends RecyclerView.Adapter<CardContentAdapter.
         holder.mCardImageOne.setImageDrawable(cards.getImageOne());
         holder.mCardImageTwo.setImageDrawable(cards.getImageTwo());
 
-        // If there is only one image, hide the frame of the second one
+        // If there is only one image to load, hide its title and the frame of the second one
         if ((String.valueOf(cards.getImageOne())).equals("null")) {
             holder.mCardFooterFrameLayoutOne.setVisibility(View.GONE);
             holder.mCardImageTitleTwo.setVisibility(View.GONE);
