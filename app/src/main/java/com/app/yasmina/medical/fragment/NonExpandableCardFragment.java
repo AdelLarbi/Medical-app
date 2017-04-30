@@ -1,6 +1,7 @@
 package com.app.yasmina.medical.fragment;
 
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,6 +26,27 @@ public abstract class NonExpandableCardFragment extends Fragment implements INon
 
     protected CardContentAdapter adapter;
     protected List<CardContent> cardList;
+
+    private final int CARDS_COUNT = 3;
+    protected final int FOOTER_TEXTS_COUNT = 5;
+    protected final int FOOTER_IMAGES_COUNT = 2;
+
+    protected final int CARD_ONE = 0;
+    protected final int CARD_TWO = 1;
+    protected final int CARD_THREE = 2;
+
+    protected final int TITLE = 0;
+    protected final int IMAGE_TITLE_ONE = 1;
+    protected final int IMAGE_TITLE_TWO = 2;
+    protected final int TEXT_ONE = 3;
+    protected final int TEXT_TWO = 4;
+
+    protected final int IMAGE_ONE = 0;
+    protected final int IMAGE_TWO = 1;
+
+    protected String[] cardHeaderText = new String[CARDS_COUNT];
+    protected String[][] cardFooterTexts = new String[CARDS_COUNT][FOOTER_TEXTS_COUNT];
+    protected Drawable[][] cardFooterImages  = new Drawable[CARDS_COUNT][FOOTER_IMAGES_COUNT];
 
     public NonExpandableCardFragment() {
         // Required empty public constructor

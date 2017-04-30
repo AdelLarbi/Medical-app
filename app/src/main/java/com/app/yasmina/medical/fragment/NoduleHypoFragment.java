@@ -24,59 +24,16 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NoduleHypoFragment extends Fragment {
-
-    private CardContentAdapter adapter;
-    private List<CardContent> cardList;
+public class NoduleHypoFragment extends NonExpandableCardFragment {
 
     public NoduleHypoFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.content_drawer, container, false);
-
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_cards_in_fragment);
-
-        cardList = new ArrayList<>();
-        adapter = new CardContentAdapter(cardList);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(view.getContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-        recyclerView.setAdapter(adapter);
-
-        prepareCards();
-
-        // Inflate the layout for this fragment
-        return view;
-    }
-
-    private void prepareCards() {
+    public void prepareCards() {
 
         final int CARDS_COUNT = 3;
-        final int FOOTER_TEXTS_COUNT = 5;
-        final int FOOTER_IMAGES_COUNT = 2;
-
-        final int CARD_ONE = 0;
-        final int CARD_TWO = 1;
-        final int CARD_THREE = 2;
-
-        final int TITLE = 0;
-        final int IMAGE_TITLE_ONE = 1;
-        final int IMAGE_TITLE_TWO = 2;
-        final int TEXT_ONE = 3;
-        final int TEXT_TWO = 4;
-
-        final int IMAGE_ONE = 0;
-        final int IMAGE_TWO = 1;
-
-        String[] cardHeaderText = new String[CARDS_COUNT];
-        String[][] cardFooterTexts = new String[CARDS_COUNT][FOOTER_TEXTS_COUNT];
-        Drawable[][] cardFooterImages  = new Drawable[CARDS_COUNT][FOOTER_IMAGES_COUNT];
 
         // First Card
         cardHeaderText[CARD_ONE] = (String) getResources().getText(R.string.hypo_one_header);

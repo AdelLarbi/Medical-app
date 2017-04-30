@@ -1,31 +1,42 @@
 package com.app.yasmina.medical.fragment;
 
-
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.support.v4.content.ContextCompat;
 
 import com.app.yasmina.medical.R;
+import com.app.yasmina.medical.other.CardContent;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NoduleIsoFragment extends Fragment {
+public class NoduleIsoFragment extends NonExpandableCardFragment {
 
     public NoduleIsoFragment() {
-
+        // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void prepareCards() {
+        final int CARDS_COUNT = 2;
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_card_non_expandabale, container, false);
+        // First Card
+        cardHeaderText[CARD_ONE] = (String) getResources().getText(R.string.iso_one_header);
+        cardFooterTexts[CARD_ONE][TITLE] = (String) getResources().getText(R.string.iso_one_footer_title);
+        cardFooterTexts[CARD_ONE][TEXT_ONE] = (String) getResources().getText(R.string.iso_one_footer_text_one);
+        cardFooterTexts[CARD_ONE][TEXT_TWO] = (String) getResources().getText(R.string.iso_one_footer_text_two);
+        cardFooterImages[CARD_ONE][IMAGE_TWO] = ContextCompat.getDrawable(getContext(), R.drawable.nodule_iso_absence);
+
+        // Second Card
+        cardHeaderText[CARD_TWO] = (String) getResources().getText(R.string.iso_two_header);
+        // TODO: header_bis
+        cardFooterTexts[CARD_TWO][TITLE] = (String) getResources().getText(R.string.iso_two_footer_title);
+        cardFooterTexts[CARD_TWO][TEXT_ONE] = (String) getResources().getText(R.string.iso_two_footer_text_one);
+        cardFooterTexts[CARD_TWO][TEXT_TWO] = (String) getResources().getText(R.string.iso_two_footer_text_two);
+
+        for (int i = 0; i < CARDS_COUNT; i++) {
+            cardList.add(new CardContent(cardHeaderText[i], cardFooterTexts[i], cardFooterImages[i]));
+        }
+
+        adapter.notifyDataSetChanged();
     }
-
 }

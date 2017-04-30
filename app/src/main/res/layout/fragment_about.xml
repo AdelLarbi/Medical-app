@@ -6,6 +6,7 @@
     android:padding="16dp"
     tools:context="com.app.yasmina.medical.fragment.AboutFragment">
 
+    <!-- TODO: add titles -->
     <TextView
         android:id="@+id/tv_about_names"
         android:layout_width="match_parent"
