@@ -84,7 +84,9 @@
 
 
     <!-- Fragment 6: About =======================================================================-->
+    <string name="conception_realisation">Conception et réalisation :</string>
     <string name="about_names">A.MEKKI / S.AMMARI / A.LARBI</string>
+    <string name="ref">Références :</string>
     <string name="about_section_one">Horvath E et al, .An ultrasonogram reporting system for thyroid nodules stratifying cancer risk for clinical management. Journal of Clinical Endocrinology and Metabolism 200990 1748–1751</string>
     <string name="about_section_two">Russ G et al, Prospective evaluation of thyroid imaging reporting and data system on 4550 nodules with and without elastography. Eur J Endocrinol. 2013 Apr 15;168(5):649-55</string>
 

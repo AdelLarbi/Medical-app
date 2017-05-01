@@ -8,19 +8,33 @@
 
     <!-- TODO: add titles -->
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/conception_realisation"
+        android:textColor="@color/grey500"
+        android:textSize="15sp" />
+
+    <TextView
         android:id="@+id/tv_about_names"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/about_names"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="25dp"
         android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ref"
+        android:textColor="@color/grey500"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/tv_about_section_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/about_section_one"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="15dp"
         android:textSize="18sp" />
 
     <TextView

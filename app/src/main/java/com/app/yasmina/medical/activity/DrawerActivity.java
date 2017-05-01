@@ -27,6 +27,7 @@ public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     static public AssetManager assetManager;
+    DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +36,11 @@ public class DrawerActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
+        drawer.openDrawer(GravityCompat.START);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -46,17 +48,10 @@ public class DrawerActivity extends AppCompatActivity
 
         // The application's asset manager. Helper for font customisation
         assetManager = getApplicationContext().getAssets();
-
-        // The main fragment view : Kyste
-        setTitle(getResources().getText(R.string.kyste));
-        KysteFragment fragment = new KysteFragment();
-        FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction().replace(R.id.content_drawer, fragment).commit();
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
